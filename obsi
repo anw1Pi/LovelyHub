@@ -1,0 +1,12 @@
+local src = loadstring(game:HttpGet("https://raw.githubusercontent.com/deividcomsono/Obsidian/main/Library.lua"))()
+src = src:gsub("SidebarCompacted%s*=%s*false", "SidebarCompacted = true")
+src = src:gsub("SidebarCompactWidth%s*=%s*%d+", "SidebarCompactWidth = 58")
+src = src:gsub("CompactWidthActivation%s*=%s*%d+", "CompactWidthActivation = 90")
+
+local newName = ""
+
+src = src:gsub('Title%s*=%s*Title%s*or%s*".-"', 'Title = "'..newName..'"')
+
+src = src:gsub('%"Sol%"', '"'..newName..'"')
+
+local Library = loadstring(src)()
